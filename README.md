@@ -25,7 +25,7 @@ php artisan migrate --seed
 php artisan key:generate
 ```
 
-6)lancer le serveur via la commande
+6) lancer le serveur via la commande
 
 ```
 php artisan serve
