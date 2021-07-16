@@ -25,3 +25,19 @@ Route::get('/profile', function () {
 Route::get('/kit', function () {
     return view('app');
 });
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+
+Route::name('tourisme')->namespace('')->prefix('/tourisme')->group(function (){
+    Route::name('ville')->namespace('')->prefix('/ville')->group(function (){
+        Route::get('/list-ville', 'App\Http\Controllers\villeController@index')->name('ville-list');
+        Route::post('/add-ville', 'App\Http\Controllers\villeController@store')->name('ville-add');
+        Route::get('/edit-ville/{id}', 'App\Http\Controllers\villeController@edit')->name('ville-edit');
+        Route::post('/update-ville/{id}', 'App\Http\Controllers\villeController@update')->name('ville-update');
+        Route::get('/create-ville', 'App\Http\Controllers\villeController@create')->name('ville-create');
+        Route::get('/delete-ville', 'App\Http\Controllers\villeController@delete')->name('ville-delete');
+    });
+});
