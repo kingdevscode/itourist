@@ -13,16 +13,17 @@ composer install
 
 3) créer une base de données nommée _i-tourist_ et modifier la ligne DB_DATABASE=i-tourist dans le fichier _.env_
 
-4) exécuter les migrations etr les seeders via la commande
 
-```
-php artisan migrate --seed
-```
-
-5) générer la clé de l'application voia la commande
+4) générer la clé de l'application voia la commande
 
 ```
 php artisan key:generate
+```
+
+5) exécuter les migrations etr les seeders via la commande
+
+```
+php artisan migrate --seed
 ```
 
 6) lancer le serveur via la commande
