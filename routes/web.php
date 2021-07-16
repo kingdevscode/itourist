@@ -25,3 +25,20 @@ Route::get('/profile', function () {
 Route::get('/kit', function () {
     return view('app');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::name('admin.')->namespace('')->prefix('/admin')->group(function(){
+    Route::name('categorie.')->namespace('')->prefix('/categorie')->group(function (){
+        Route::get('detail-categorie/{id}', 'App\Http\Controllers\categorieController@edit')->name('categorie-edit');
+        Route::post('/create-categorie', 'App\Http\Controllers\categorieController@store')->name('categorie-store');
+        Route::get('listing-categorie', 'App\Http\Controllers\categorieController@index')->name('categorie-liste');
+        Route::get('/delete-categorie/{id}', 'App\Http\Controllers\categorieController@destroy')->name('categorie-delete');
+        Route::get('/categorie', 'App\Http\Controllers\categorieController@create')->name('categorie-create');
+        Route::get('edit-categorie/{id}', 'App\Http\Controllers\categorieController@show')->name('categorie-show');
+        Route::post('update-categorie/{id}', 'App\Http\Controllers\categorieController@update')->name('categorie-update');
+    });
+});
