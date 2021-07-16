@@ -3,9 +3,9 @@
 ```
 git clone https://github.com/kingdevscode/itourist.git
 ```
-2) renommere le fichier _.env.axample_ en _.env_
+2) renommere le fichier *.env.axample* en *.env*
 
-3) créer une base de données nommée _i-tourist_ et modifier la ligne DB_DATABASE=i-tourist dans le fichier _.env_
+3) créer une base de données nommée *i-tourist* et modifier la ligne *DB_DATABASE=i-tourist* dans le fichier *.env*
 
 4) exécuter les migrations etr les seeders via la commande
 
