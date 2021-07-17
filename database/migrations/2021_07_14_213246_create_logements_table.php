@@ -17,7 +17,7 @@ class CreateLogementsTable extends Migration
             $table->unsignedBigInteger('id')->autoIncrement();
             $table->string('name');
             $table->string('adresse');
-            $table->string('images');
+            $table->string('images')->nullable();
             $table->unsignedBigInteger('site_id');
             $table->foreign('site_id')->references('id')->on('sites')->onDelete('cascade');
             $table->timestamps();

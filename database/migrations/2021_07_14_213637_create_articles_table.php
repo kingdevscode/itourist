@@ -19,7 +19,7 @@ class CreateArticlesTable extends Migration
             $table->string('nom');
             $table->string('description');
             $table->string('estimation');
-            $table->string('images');
+            $table->string('images')->nullable();
             $table->unsignedBigInteger('categorie_id');
             $table->unsignedBigInteger('guide_id');
             $table->foreign('guide_id')->references('id')->on('guides')->onDelete('cascade');

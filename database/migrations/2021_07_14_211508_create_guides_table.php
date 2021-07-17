@@ -20,7 +20,7 @@ class CreateGuidesTable extends Migration
             $table->string('tel')->unique();
             $table->string('login')->unique();
             $table->string('password');
-            $table->string('profile');
+            $table->string('profile')->nullable();
             $table->timestamps();
         });
     }
