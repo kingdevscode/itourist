@@ -18,6 +18,7 @@ class CreateSitesTable extends Migration
             $table->string('name');
             $table->string('adresse');
             $table->longText('description');
+            $table->string('images');
             $table->unsignedBigInteger('guide_id');
             $table->foreign('guide_id')->references('id')->on('guides')->onDelete('cascade');
             $table->timestamps();

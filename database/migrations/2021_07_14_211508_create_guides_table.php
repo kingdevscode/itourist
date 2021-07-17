@@ -20,9 +20,7 @@ class CreateGuidesTable extends Migration
             $table->string('tel')->unique();
             $table->string('login')->unique();
             $table->string('password');
-            $table->string('motivations')->nullable();
-            $table->unsignedBigInteger('ville_id')->nullable();
-            $table->foreign('ville_id')->references('id')->on('villes')->onDelete('cascade');
+            $table->string('profile');
             $table->timestamps();
         });
     }

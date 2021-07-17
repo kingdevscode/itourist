@@ -15,6 +15,7 @@ class CreateDemandesTable extends Migration
     {
         Schema::create('demandes', function (Blueprint $table) {
             $table->unsignedBigInteger('id')->autoIncrement();
+            $table->string('motivation')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->enum('statut',['pending','cancelled','rejected'])->default('pending');
             $table->foreign('user_id')->references('id')->on('users');
